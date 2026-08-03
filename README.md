@@ -1,7 +1,6 @@
 Programação para Dispositivos Móveis (PPDM)
 Tópicos 01 e 02 — Dispositivos Móveis & Criação de Interface
 
-📝 Parte 1: Respostas Conceituais
 1. Diferença de Arquiteturas: Nativo vs Cross-Platform/Híbrido
 O desenvolvimento Nativo (Android com Kotlin/Java ou iOS com Swift/Objective-C) usa a linguagem e o SDK oficial de cada plataforma, compilando diretamente para código de máquina daquele sistema. Isso garante o máximo de performance e acesso total às APIs nativas do dispositivo, mas exige manter dois códigos-fonte separados (um para Android, outro para iOS), o que aumenta o custo e o tempo de desenvolvimento.
 Já o desenvolvimento Cross-Platform/Híbrido, como o Flutter, permite escrever um único código-fonte (em Dart, no caso do Flutter) que é compilado para rodar em múltiplas plataformas (Android, iOS, Web, Desktop). O Flutter, especificamente, não usa componentes de UI nativos da plataforma — ele desenha cada widget diretamente na tela através de sua própria engine gráfica (Skia/Impeller), o que garante consistência visual entre plataformas e boa performance, embora ainda possa exigir "pontes" (platform channels) para acessar certas funcionalidades nativas específicas.
@@ -20,14 +19,3 @@ Marca aquele widget como "sujo" (dirty), avisando o framework de que ele precisa
 O Flutter chama novamente o método `build()` daquele widget, gerando uma nova árvore de widgets (na verdade, uma nova descrição da UI).
 O Flutter compara essa nova árvore com a anterior (usando o algoritmo de diffing da árvore de elementos/render objects) e atualiza somente as partes da tela que realmente mudaram, sem redesenhar a interface inteira do zero.
 Ou seja, `setState()` não altera a tela diretamente — ele avisa o framework que o estado mudou e "agenda" uma reconstrução eficiente da UI para refletir esse novo estado.
-
-💻 Parte 2: Prática Hands-on
-[ ] Tutorial oficial concluído: Flutter Getting Started — Step 3
-[ ] Árvore de widgets construída com `Scaffold`, `Row`, `Column` e `Container`
-[ ] Interatividade e alteração de estado implementadas (`StatefulWidget` + `setState()`)
-[ ] Código organizado em componentes separados (widgets próprios em arquivos distintos)
-[ ] App testado sem erros e sem overflow de tela
-Link do repositório GitHub: adicionar aqui
-
-✅ Critério de Aceite
-Código executando sem erros e layout sem estouros de tela (overflow).
